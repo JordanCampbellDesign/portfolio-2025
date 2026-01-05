@@ -8,7 +8,7 @@
   const PASSWORD_KEY = 'portfolio_auth';
   
   // SET YOUR PASSWORD HERE - Change 'your_password_here' to your actual password
-  const CORRECT_PASSWORD = 'your_password_here'; // ⚠️ CHANGE THIS TO YOUR ACTUAL PASSWORD
+  const CORRECT_PASSWORD = 'hellothere'; // ⚠️ CHANGE THIS TO YOUR ACTUAL PASSWORD
   
   const PROTECTED_PAGES = [
     'work/hibernate.html',
