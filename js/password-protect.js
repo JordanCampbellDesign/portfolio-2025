@@ -97,7 +97,9 @@
     }
   }
 
-  // Initialize
+  // Initialize - PASSWORD PROTECTION DISABLED
+  // Protection has been removed - pages are now publicly accessible
+  /*
   if (window.location.pathname.includes('401.html')) {
     // Password page - attach form handler
     const form = document.getElementById('email-form');
@@ -110,5 +112,6 @@
       redirectToPassword();
     }
   }
+  */
 })();
 
