@@ -2104,29 +2104,30 @@ p {
     margin-left: 0;
     padding-top: 30px;
     padding-left: 20px;
-    display: block;
-  }
-
-  /* Style nav-menu to be full width, bottom center when open */
-  .nav-menu[data-nav-menu-open] {
+    /* Base positioning - let JavaScript handle initial transform */
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #fff;
-    padding: 40px 20px;
-    padding-bottom: 100px; /* Space for menu button */
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
     z-index: 999;
     display: flex !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0;
+  }
+
+  /* Override Webflow's default top positioning */
+  .nav-menu[data-nav-menu-open] {
     top: auto !important;
+    background-color: #fff;
+    padding: 40px 20px;
+    padding-bottom: 100px; /* Space for menu button */
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0;
     text-align: center;
+    pointer-events: auto;
   }
 
   .nav-menu[data-nav-menu-open] .mobile-header-links {
