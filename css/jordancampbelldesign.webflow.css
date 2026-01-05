@@ -278,8 +278,14 @@ p {
   max-height: 600px;
   height: auto;
   border-radius: 24px;
-  mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 85%);
+  mask-image: 
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image: 
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-composite: source-in;
 }
 
 .image.scrolling {
