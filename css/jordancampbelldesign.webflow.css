@@ -276,7 +276,6 @@ p {
 .image.bleed.inbox-health-image {
   object-fit: cover;
   max-height: 600px;
-  width: 100%;
   height: auto;
 }
 
