@@ -4,6 +4,7 @@
   --background-green: #00d1dc1a;
   --background-orange: #f864031a;
   --background-purple: #fbfbff;
+  --background-light-blue: #e6f2ff;
   --ghost-white: #fbfbff;
   --primary-black: #171717;
 }
@@ -327,6 +328,10 @@ p {
 
 .project-vertical.bleed.backkground-purple {
   background-color: var(--background-purple);
+}
+
+.project-vertical.bleed.background-light-blue {
+  background-color: var(--background-light-blue);
 }
 
 .projecthead-wraper {
