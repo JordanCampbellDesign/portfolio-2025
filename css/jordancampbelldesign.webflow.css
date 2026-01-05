@@ -277,7 +277,9 @@ p {
   object-fit: cover;
   max-height: 600px;
   height: auto;
-  border-radius: 40px;
+  border-radius: 40px !important;
+  overflow: hidden;
+  display: block;
 }
 
 .image.scrolling {
