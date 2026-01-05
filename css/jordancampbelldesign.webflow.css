@@ -273,6 +273,13 @@ p {
   max-width: 60%;
 }
 
+.image.bleed.inbox-health-image {
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+  height: auto;
+}
+
 .image.scrolling {
   justify-content: center;
   height: 10%;
@@ -1791,6 +1798,10 @@ p {
 
   .image.bleed {
     max-width: 100%;
+  }
+
+  .image.bleed.inbox-health-image {
+    max-height: 400px;
   }
 
   .image.comparison {
