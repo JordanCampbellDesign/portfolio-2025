@@ -2121,7 +2121,127 @@ p {
   /* Override Webflow's default top positioning */
   .nav-menu[data-nav-menu-open] {
     top: auto !important;
+    will-change: transform, opacity;
     background-color: #fff;
+  }
+
+  /* Smooth animation keyframes */
+  @keyframes slideUpFromBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDownToBottom {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  .nav-menu.menu-opening {
+    animation: slideUpFromBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    top: auto !important;
+    bottom: 0 !important;
+    position: fixed !important;
+    will-change: transform, opacity;
+  }
+
+  .nav-menu.menu-closing {
+    animation: slideDownToBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    top: auto !important;
+    bottom: 0 !important;
+    position: fixed !important;
+    will-change: transform, opacity;
+  }
+
+  /* Prevent Webflow from interfering during animation */
+  .nav-menu.menu-opening[data-nav-menu-open],
+  .nav-menu.menu-closing[data-nav-menu-open] {
+    top: auto !important;
+    bottom: 0 !important;
+  }
+
+  /* Menu button state indicators for debugging */
+  .menu-button.menu-state-init {
+    background-color: #000 !important;
+  }
+
+  .menu-button.menu-state-opening {
+    background-color: #000 !important;
+  }
+
+  .menu-button.menu-state-open {
+    background-color: #000 !important;
+  }
+
+  .menu-button.menu-state-closing {
+    background-color: #000 !important;
+  }
+
+  .menu-button.menu-state-closed {
+    background-color: #000 !important;
+  }
+
+  .menu-button.menu-state-error {
+    background-color: #ff0000 !important;
+    animation: pulse 0.3s infinite;
+  }
+
+  .menu-button.menu-state-desktop {
+    background-color: #000 !important;
+  }
+
+  /* Hamburger to X animation */
+  .menu-button .w-icon-nav-menu {
+    transition: transform 0.3s ease;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu-button .w-icon-nav-menu:before {
+    transition: all 0.3s ease;
+  }
+
+  /* When menu is open, transform hamburger to X */
+  .menu-button.menu-state-open .w-icon-nav-menu:before,
+  .menu-button.menu-state-opening .w-icon-nav-menu:before {
+    content: "✕" !important; /* X character */
+    font-family: Arial, sans-serif !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    font-weight: normal !important;
+    transform: rotate(0deg) !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  /* When menu is closed, show hamburger */
+  .menu-button.menu-state-closed .w-icon-nav-menu:before,
+  .menu-button.menu-state-closing .w-icon-nav-menu:before,
+  .menu-button.menu-state-init .w-icon-nav-menu:before {
+    content: "\e602" !important; /* Original hamburger icon */
+    transform: rotate(0deg) !important;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
     padding: 40px 20px;
     padding-bottom: 100px; /* Space for menu button */
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
