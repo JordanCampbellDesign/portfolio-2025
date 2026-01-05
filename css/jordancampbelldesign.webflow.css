@@ -277,6 +277,8 @@ p {
   object-fit: cover;
   max-height: 600px;
   height: auto;
+  mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
 }
 
 .image.scrolling {
