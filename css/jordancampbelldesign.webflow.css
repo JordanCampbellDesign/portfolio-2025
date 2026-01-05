@@ -358,6 +358,12 @@ p {
   align-items: flex-start;
 }
 
+.projecthead-wraper.bleed.inbox-health-copy {
+  max-width: 50%;
+  margin-right: 60px;
+  padding-bottom: 60px;
+}
+
 .container-main {
   max-width: 1440px;
   margin-left: auto;
@@ -2287,6 +2293,12 @@ p {
 
   .projecthead-wraper {
     flex-direction: column;
+  }
+
+  .projecthead-wraper.bleed.inbox-health-copy {
+    max-width: 100%;
+    margin-right: 0;
+    padding-bottom: 40px;
   }
 
   .container-main {
